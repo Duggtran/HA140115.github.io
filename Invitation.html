@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">    <!-- Engligh language, en stands for engligh--> 
+<head>
+
+  <title>webpage 1</title>  <!-- you need a title for your webpage ! -->
+  <meta charset="utf-8">    <!-- Character set of English -->
+
+  <!-- if you are using a bootstrap - we need some external links to be linked to yur webpage -->
+  <!-- because, bootstrap includes CSS, JAvascripts, html --->
+  <!-- we need to compulsorily copypaste few LINKS of bootstrap -->
+  <!-- they are called CDN links -->
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- CDN link for social media icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+  body {background:#282828;}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #more {display: none;}
+
+  html {
+  box-sizing: border-box;
+}
+
+ /* The hero image */
+        .hero-image {
+            /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("124191775_1451475951708560_134614208445612454_o.jpg");
+
+            /* Set a specific height */
+            height: 100%;
+
+            /* Position and center the image to scale nicely on all screens */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Place text in the middle of the image */
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.bg-color {
+            background-color: #f05123;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.footer {
+  position: sticky;    
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f05123;
+  color: white;
+  text-align: center;
+}
+
+
+.fa {
+  padding: 5px;
+  font-size: 10px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px 1px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+  </style>
+
+  <!-- iNSERT THE JAVASCRIPT CODE HERE -->
+  <script>
+  	function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+  </script>
+</head>
+
+<!--- NOW , WE WILL START CODING OUR WEBSITE -->
+
+<!-- NAV BAR codes -->
+<body style="height:1500px">
+
+<nav class="navbar navbar-expand-sm bg-color navbar-dark fixed-top">
+  <a class="navbar-brand" href="Home.html">F-Camp 2021</a>
+  <ul class="navbar-nav ml-auto">  <!-- i need my menus on top right -->
+    <!-- ml-auto stands for MARGIN LEFT -->
+
+    <li class="nav-item">
+      <a class="nav-link" href="Invitation.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Events.html">Events</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Register.html">Register</a>
+    </li>
+  </ul>
+  <!-- after the navbar code, I have inserted a code for SEARCH -->
+
+  <nav class="navbar navbar-expand-sm bg-color navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+</nav>
+
+
+ <!-- NAV BAR ends here -->
+
+  <div class="hero-image">
+        <div class="hero-text">
+            <h1>F-Camp 2021</h1>
+            <h2>Start your FPT life with F-Camp</h2>
+            <br>
+            <a href="Register.html" class="button">REGISTER NOW</a>
+            <br>
+            <br>
+            <p>Registered students: 1203</p>
+        </div>
+    </div>
+
+  <br>
+
+
+
+<!-- new section starts - ABOUT US PAGE -->
+<section>
+	<div class="container">
+		<h1 class="text-center pt-3">FPT Annual Festival</h1> <!-- pt means padding, value shud be between 1 to 5 -->
+		<hr class="w-100 pt-3"> <!-- hr is the line under about us-->
+
+		<div class="row">
+			<div class="col">
+				<img src="D:\Studies\Code\121260770_1428138074042348_22489499087811089_o.png" width="100%" height=auto>
+			</div>
+			<div class="col">
+				<h2>Our History</h2>
+				<br>
+				<p>🍁 𝐅-𝐂𝐚𝐦𝐩 là sự kiện chào tân sinh viên được tổ chức thường niên bởi sinh viên khóa trước cùng sự đồng hành và cố vấn của phòng 𝐇𝐨̛̣𝐩 𝐭𝐚́𝐜 𝐪𝐮𝐨̂́𝐜 𝐭𝐞̂́ 𝐯𝐚̀ 𝐏𝐡𝐚́𝐭 𝐭𝐫𝐢𝐞̂̉𝐧 𝐜𝐚́ 𝐧𝐡𝐚̂𝐧 - 𝐈𝐂-𝐏𝐃𝐏. 𝐅-𝐂𝐚𝐦𝐩 luôn luôn là sự kiện được mong chờ nhất đối với sinh viên FPT, không chỉ mang đến sự sôi động, mới lạ, 𝐅-𝐂𝐚𝐦𝐩 còn lan toả tinh thần 𝐧𝐡𝐢𝐞̣̂𝐭 𝐡𝐮𝐲𝐞̂́𝐭, 𝐧𝐚̆𝐧𝐠 đ𝐨̣̂𝐧𝐠 vốn có của sinh viên FPT.<span id="dots">...</span><span id="more"> 
+
+        🍁 Đặc biệt hơn nữa, 𝐅-𝐂𝐚𝐦𝐩 𝟐𝟎𝟐1 còn là cột mốc quan trọng đánh dấu hành trình 𝟏𝟎 𝐧𝐚̆𝐦 đầy tâm huyết, máu lửa của hàng ngàn con người trong đội ngũ BTC trong suốt những năm vừa qua. 𝐅-𝐂𝐚𝐦𝐩 𝟐𝟎𝟐𝟎 sẽ được tổ chức vào ngày 𝟎𝟖/𝟏𝟏, hứa hẹn sẽ để lại vô vàn kỉ niệm khó phai nhất về văn hóa trường F - nơi các bạn sinh viên đang cùng nhau cháy hết mình với đam mê, khát vọng để tạo ra những khoảnh khắc đáng nhớ nhất cho thanh xuân tại 𝐇𝐨𝐚̀ 𝐋𝐚̣𝐜 𝐂𝐚𝐦𝐩𝐮𝐬.</span></p> <br>
+
+				<button onclick="myFunction()" id="myBtn">Read more</button>
+
+
+			</div>
+		</div>
+</section>
+
+<br>
+<br>
+
+<section>
+    <div class="container">
+  <div style="text-align:center">
+    <br>
+    <h1>Register</h1>
+    <p>Save your spot for the whole event!</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="C:\Users\Dug Tran\Pictures\Saved Pictures\Web\pexels-photo-4659806.jpeg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Major</label>
+        <select id="country" name="country">
+          <option value="australia">IT</option>
+          <option value="canada">Design</option>
+          <option value="usa">Finance</option>
+        </select>
+        <label for="subject">Tell us about you</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+
+<!-- I am done with my CSS codes for the Social media icons, now lets do the HTML-->
+
+<div class="footer">
+	<br>
+<!-- Add font awesome icons -->
+<a href="https://www.facebook.com" class="fa fa-facebook"></a>
+<a href="https://www.google.com" class="fa fa-google"></a>
+<a href="https://www.youtube.com" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com" class="fa fa-instagram"></a>
+
+  
+  <p class="pt-2"> F-Camp 2021 </p>
+
+</div>
+
+</body>
+
+
+
+</html>
